@@ -1,0 +1,26 @@
+:root{
+    --title-color:#321153;
+    --primary-color:#34cb79;
+
+}
+a{
+    text-decoration: none;
+}
+
+*{
+    font-family: Roboto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f0f0f5;
+}
+h1, h2, h3, h5, h6{
+    font-family: 'Ubuntu';
+    color: var(--title-color);
+}
+/*Box Model*/
+/*Toda caixa tem largura, altura, preenchimento, bordas, cor, fundo, e maneira que é vista pelo html*/
+
+

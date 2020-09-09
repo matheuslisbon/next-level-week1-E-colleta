@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado da Pesquisa</title>
+    <link rel="stylesheet" href="./main/main.css">
+    <link rel="stylesheet" href="./main/search-results.css">
+    <link rel="stylesheet" href="./main/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&Ubuntu:wght@700display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id='page-search-results'>
+        
+        {% include 'partials/page-header.html' %}
+
+            <main>
+            {% if total > 0%}
+                <h4>
+                    <strong>
+                        {{total}}
+                    </strong>Encontrados
+                </h4>
+
+                <div class="cards">
+
+                    {% for place in places %}
+                    <div class="card">
+                        <img src='{place.img}' alt="{{place.name}}">
+                        <h1>{{place.name}}</h1>
+                        <h3>{{place.items}}</h3>
+                        <p>
+                            {{place.city}}, {{place.state}}
+                            <br>
+                            {{ place.address }}
+                            {{ place.address2 }}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            {% else %}
+            <h4><strong>Nenhum </strong>local encontrado</h4>
+            {% endif %}
+            </main>
+            
+    </div>
+
+<script src="./scripts/create-point.js"></script>
+</body>
+</html>
